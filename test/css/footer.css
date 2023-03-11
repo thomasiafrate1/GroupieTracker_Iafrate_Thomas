@@ -1,0 +1,29 @@
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #ffc107;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 150px; /* Ajoutez une marge en haut pour éviter que le contenu de la page ne soit coupé par le footer */
+  }
+
+ footer img{
+    height: 50px;
+ }
