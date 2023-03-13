@@ -1,21 +1,23 @@
 package main
 
 import (
+	"log"
 	"net/http"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "test/index.html")
-	})
-	// Spécifiez le répertoire contenant les fichiers statiques (CSS, JS, images, etc.)
-	staticDir := "test/css/"
+	// Créer un gestionnaire de fichiers statiques pour servir les fichiers du dossier "test"
+	fs := http.FileServer(http.Dir("test"))
 
-	// Créez un routeur HTTP
-	router := http.NewServeMux()
+	// Définir les routes pour servir les fichiers statiques et les pages HTML
+	http.Handle("/", fs)
+	http.Handle("/pages/", fs)
+	http.Handle("/css/", fs)
 
-	// Servez les fichiers statiques en utilisant http.FileServer
-	router.Handle("/test/", http.StripPrefix("/test/", http.FileServer(http.Dir(staticDir))))
-
-	http.ListenAndServe(":8080", nil)
+	// Démarrer le serveur web
+	log.Println("Serveur démarré sur le port 8080")
+	err := http.ListenAndServe(":8888", nil)
+	if err != nil {
+		log.Fatal("Erreur de démarrage du serveur: ", err)
+	}
 }
