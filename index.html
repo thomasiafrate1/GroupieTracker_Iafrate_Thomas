@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/caroussel.css">
     <link rel="stylesheet" href="css/footer.css">
@@ -13,11 +13,11 @@
 <body>
     <nav>
         <div>
-          <a href="index.html" class="logo"><img src="/css/images/logo.png" alt="Logo Disney+"></a>
+          <a href="/" class="logo"><img src="/css/images/logo.png" alt="Logo Disney+"></a>
         </div>
         <ul class="menu">
-          <li><a href="index.html"><i class="fas fa-home"></i> ACCUEIL</a></li>
-          <li><a href="pages/personnages.html"><i class="fas fa-user"></i> PERSONNAGES</a></li>
+          <li><a href="/"><i class="fas fa-home"></i> ACCUEIL</a></li>
+          <li><a href="/pages/personnages"><i class="fas fa-user"></i> PERSONNAGES</a></li>
           <li><a href="#"><i class="fas fa-video"></i>FILMS</a></li>  
       </nav>
       <div class="carousel">
@@ -40,7 +40,17 @@
               les acteurs, les citations, les dates de sortie et les critiques. L'API est donc 
               la solution idéale pour utiliser le monde magique dans les sites web.    </p>
       </div>
-    
+      {{if .}}
+          {{range .}}
+            <div class="game-container">
+              <h3>{{.Name}}</h3>
+              <img src="{{.ImageURL}}" alt="{{.Name}}">
+              <p>{{.ID}}</p>
+            </div>
+          {{end}}
+        {{else}}
+          <p>Pas de résultat trouvé.</p>
+        {{end}}
       <footer>
           <img src="/css/images/logo.png" class="logo_footer">
           <p>© 2023 Disney+. Tous droits réservés.</p>

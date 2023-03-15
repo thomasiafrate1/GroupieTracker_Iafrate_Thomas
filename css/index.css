@@ -1,11 +1,12 @@
 @font-face {
 	font-family: 'Avenir';
-	src: url('../images/Avenir-Roman.ttf'),
+	src: url('images/Avenir-Roman.ttf'),
 }
 body{
     font-family: 'Avenir';
     margin: 0;
-    background-image: url('../images/fond\ disney.jpg');
+    background-color: black;
+    background-image: url('images/fond\ disney.jpg');
     background-size: cover;
 }
 nav {
