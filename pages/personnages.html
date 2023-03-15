@@ -34,18 +34,26 @@
               <img src="{{.ImageURL}}">
               <p class="nom_perso">{{.Name}}</p>
               <p>Films :</p>
-              <ul>
-                {{range .VideoGames}}
-                  <li>{{.}}</li>
+              {{if (eq (len .Films) 0)}}
+                  aucun
+                {{else}}
+                  <ul>
+                    {{range .Films}}
+                      <li>{{.}}</li>
+                    {{end}}
+                  </ul>
                 {{end}}
-              </ul>
-              <p>Jeux-Vidéos :</p>
-              <ul>
-                {{range .VideoGames}}
-                  <li>{{.}}</li>
-                {{end}}
-              </ul>
-              <p>Alliés:</p>
+                <p>Jeux-Vidéos :</p>
+                {{if (eq (len .VideoGames) 0)}}
+                    aucun
+                  {{else}}
+                    <ul>
+                      {{range .VideoGames}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                  {{end}}
+              <p>Alliés :</p>
               {{if (eq (len .Allies) 0)}}
                   aucun
                 {{else}}
@@ -55,7 +63,26 @@
                     {{end}}
                   </ul>
                 {{end}}
-              <p>Ennemis : {{.Enemies}}</p>
+                <p>Ennemis :</p>
+                {{if (eq (len .Enemies) 0)}}
+                    aucun
+                  {{else}}
+                    <ul>
+                      {{range .Enemies}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                  {{end}}
+                  <p>Séries :</p>
+                {{if (eq (len .TvShows) 0)}}
+                    aucun
+                  {{else}}
+                    <ul>
+                      {{range .TvShows}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                  {{end}}
               {{end}}
           </div>
       </div>    

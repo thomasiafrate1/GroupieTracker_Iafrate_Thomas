@@ -71,6 +71,7 @@ func main() {
 				VideoGames []string
 				Allies     []string
 				Enemies    []string
+				TvShows    []string
 			}{
 				Name:       character.Name,
 				ImageURL:   character.ImageURL,
@@ -78,6 +79,7 @@ func main() {
 				VideoGames: character.VideoGames,
 				Allies:     character.Allies,
 				Enemies:    character.Enemies,
+				TvShows:    character.TvShows,
 			}
 
 			err = tmpl.Execute(w, data)
