@@ -4,6 +4,7 @@
   align-items: center;
   position: relative;
   width: 1000px;
+  max-width: 1000px; /* Ajout d'une largeur maximale */
   height: 50vh;
   overflow: hidden;
   margin: 150px auto;
@@ -39,6 +40,7 @@
   color: #ffffff;
   cursor: pointer;
   z-index: 1;
+  
 }
 
 .btn-prev {
@@ -47,4 +49,15 @@
 
 .btn-next {
   right: 20px;
+}
+@media screen and (max-width: 1000px) {
+  .carousel {
+    max-width: 90%; 
+    height: 30vh;
+    margin: 100px auto;
+  }
+  .btn-prev, .btn-next {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }

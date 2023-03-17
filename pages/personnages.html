@@ -14,7 +14,7 @@
 
     <nav>
         <div>
-          <a href="/" class="logo"><img src="../css/images/logo.png" alt="Logo Disney+"></a>
+          <a href="../index.html" class="logo"><img src="../css/images/logo.png" alt="Logo Disney+"></a>
         </div>
         <ul class="menu">
           <li><a href="/"><i class="fas fa-home"></i> ACCUEIL</a></li>
@@ -30,7 +30,7 @@
           {{if eq .Choix 2}}
           <div class="carte_perso">
               {{if .Name}}
-              <img src="{{.ImageURL}}">
+              <img src="{{.ImageURL}}" class="">
               <p class="nom_perso">{{.Name}}</p>
               <p>Films :</p>
                 {{if (eq (len .Films) 0)}}
