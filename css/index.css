@@ -91,7 +91,7 @@ nav {
 .presentation{
     font-size: 30px;
     color: #ffffff;
-    margin-top: 150px;
+    margin-top: 250px;
 }
  .titre_pres {
     display: flex;
@@ -109,3 +109,30 @@ nav {
       margin-right: 50px;
     }
   }
+
+
+  .ctn_btn{
+    display: flex;
+  }
+
+  .bouton{
+    background-color: rgb(19, 18, 18);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 768px;
+    height: 300px;
+    margin-top: 200px;
+    margin-left: 350px;
+    margin-right: 350px;
+    border: 5px solid #ffffff;
+    font-size: 140%;
+    
+  }
+  

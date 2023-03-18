@@ -7,30 +7,21 @@
     <title>Accueil</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/caroussel.css">
+    <link rel="stylesheet" href="css/personnages.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
     <nav>
         <div>
-          <a href="index.html" class="logo"><img src="css/images/logo.png" alt="Logo Disney+"></a>
+          <a href="/" class="logo"><img src="css/images/logo.png" alt="Logo Disney+"></a>
         </div>
         <ul class="menu">
-          <li><a href="index.html"><i class="fas fa-home"></i> ACCUEIL</a></li>
-          <li><a href="pages/personnages.html"><i class="fas fa-user"></i> PERSONNAGES</a></li>
-          <li><a href="#"><i class="fas fa-video"></i>FILMS</a></li>  
+          <li><a href="/"><i class="fas fa-home"></i> ACCUEIL</a></li>
+          <li><a href="/personnages"><i class="fas fa-user"></i> PERSONNAGES</a></li>
+          <li><a href="/doc"><i class="fas fa-video"></i>DOCUMENTATION</a></li>  
       </nav>
-      <div class="carousel">
-          <div class="slide">
-            <img src="css/images/carousel_1.jpg" alt="Slide 1">
-          </div>
-          <div class="slide">
-            <img src="css/images/carousel_2.jpg" alt="Slide 2">
-          </div>
-          <div class="slide">
-            <img src="css/images/carousel_3.jpg" alt="Slide 3">
-          </div>
-        </div>
+      
       <div class="presentation">
           <h1 class="titre_pres">API DISNEY</h1>
           <p class="titre_pres">
@@ -40,17 +31,11 @@
               les acteurs, les citations, les dates de sortie et les critiques. L'API est donc 
               la solution idéale pour utiliser le monde magique dans les sites web.    </p>
       </div>
-      {{if .}}
-          {{range .}}
-            <div class="game-container">
-              <h3>{{.Name}}</h3>
-              <img src="{{.ImageURL}}" alt="{{.Name}}">
-              <p>{{.ID}}</p>
-            </div>
-          {{end}}
-        {{else}}
-          <p>Pas de résultat trouvé.</p>
-        {{end}}
+      
+      <div class="ctn_btn">
+          <button class="bouton">Rechercher des personnages</button >
+          <button class="bouton">Regarder la documentation</button >
+      </div>
       <footer>
           <img src="css/images/logo.png" class="logo_footer">
           <p>© 2023 Disney+. Tous droits réservés.</p>

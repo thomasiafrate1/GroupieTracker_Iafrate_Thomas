@@ -14,67 +14,19 @@
 
     <nav>
         <div>
-          <a href="../index.html" class="logo"><img src="../css/images/logo.png" alt="Logo Disney+"></a>
+          <a href="/" class="logo"><img src="../css/images/logo.png" alt="Logo Disney+"></a>
         </div>
         <ul class="menu">
           <li><a href="/"><i class="fas fa-home"></i> ACCUEIL</a></li>
-          <li><a href="/pages/personnages"><i class="fas fa-user"></i> PERSONNAGES</a></li>
-          <li><a href="#"><i class="fas fa-video"></i>FILMS</a></li>  
+          <li><a href="/personnages"><i class="fas fa-user"></i> PERSONNAGES</a></li>
+          <li><a href="/doc"><i class="fas fa-video"></i>DOCUMENTATION</a></li>  
       </nav>
 
         <form action="/" method="post" class="search-bar">
-          <input type="text" id="id" name="Name">
+          <input type="text" id="id" name="Name" placeholder="Rechercher par ex Baloo">
         </form>
 
         <div class="ctn">
-          {{if eq .Choix 2}}
-          <div class="carte_perso">
-              {{if .Name}}
-              <img src="{{.ImageURL}}" class="">
-              <p class="nom_perso">{{.Name}}</p>
-              <p>Films :</p>
-                {{if (eq (len .Films) 0)}}
-                    aucun
-                  {{else}}
-                    <ul>
-                      {{range .Films}}
-                        <li>{{.}}</li>
-                      {{end}}
-                    </ul>
-                  {{end}}
-              <p>Alliés :</p>
-              {{if (eq (len .Allies) 0)}}
-                  aucun
-                {{else}}
-                  <ul>
-                    {{range .Allies}}
-                      <li>{{.}}</li>
-                    {{end}}
-                  </ul>
-                {{end}}
-                <p>Ennemis :</p>
-                {{if (eq (len .Enemies) 0)}}
-                    aucun
-                  {{else}}
-                    <ul>
-                      {{range .Enemies}}
-                        <li>{{.}}</li>
-                      {{end}}
-                    </ul>
-                  {{end}}
-                  <p>Séries :</p>
-                {{if (eq (len .TvShows) 0)}}
-                    aucun
-                  {{else}}
-                    <ul>
-                      {{range .TvShows}}
-                        <li>{{.}}</li>
-                      {{end}}
-                    </ul>
-                  {{end}}
-              {{end}}
-          </div>
-          {{end}}
           {{if eq .Choix 1}}
           {{range .Data}}
           <div class="carte_perso">
