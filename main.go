@@ -342,9 +342,61 @@ func listeNomsHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	static := http.FileServer(http.Dir("css"))
 	http.Handle("/css/", http.StripPrefix("/css/", static))
-	tmpl := template.Must(template.ParseFiles("index.html"))
+
+	tmpl3 := template.Must(template.ParseFiles("index.html"))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+
+		if r.Method == http.MethodPost {
+			err := r.ParseForm()
+			if err != nil {
+				http.Error(w, "Bad Request", http.StatusBadRequest)
+				return
+			}
+
+			Name := r.FormValue("Name")
+			fmt.Println(Name)
+
+			var id int
+			var verif_id bool
+			page := 1
+			for !verif_id {
+				test := fullCharacter(page)
+				for i := 0; i < len(test.Data); i++ {
+					if strings.EqualFold(Name, test.Data[i].Name) {
+						id = test.Data[i].ID
+						verif_id = true
+						break
+					}
+				}
+				if verif_id {
+					data := getCharacter(id)
+					data.Choix = 2
+					err = tmpl3.Execute(w, data)
+					if err != nil {
+						fmt.Println(err)
+					}
+					break
+				} else if test.NextPage == "" {
+					http.Error(w, "Character not found", http.StatusNotFound)
+					break
+				} else {
+					page++
+				}
+			}
+		} else {
+			test := fullCharacter(1)
+			test.Choix = 1
+			err := tmpl3.Execute(w, test)
+			if err != nil {
+				fmt.Println(err)
+			}
+		}
+	})
+	tmpl := template.Must(template.ParseFiles("pages/personnages.html"))
+
+	http.HandleFunc("/personnages", func(w http.ResponseWriter, r *http.Request) {
+
 		if r.Method == http.MethodPost {
 			err := r.ParseForm()
 			if err != nil {
@@ -444,5 +496,5 @@ func main() {
 		listeNomsHandler(w, r)
 	})
 
-	http.ListenAndServe(":8888", nil)
+	http.ListenAndServe(":8080", nil)
 }

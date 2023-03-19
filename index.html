@@ -32,19 +32,71 @@
               la solution idéale pour utiliser le monde magique dans les sites web.    </p>
       </div>
       
-      <div class="ctn_btn">
-          <button class="bouton">Rechercher des personnages</button >
-          <button class="bouton">Regarder la documentation</button >
-      </div>
-      <footer>
-          <img src="css/images/logo.png" class="logo_footer">
-          <p>© 2023 Disney+. Tous droits réservés.</p>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+      
+      <div class="ctn">
+        {{if eq .Choix 2}}
+        <div class="carte_perso">
+            {{if .Name}}
+            <img src="{{.ImageURL}}">
+            <p class="nom_perso">{{.Name}}</p>
+            <p>Films :</p>
+              {{if (eq (len .Films) 0)}}
+              aucun
+              {{else}}
+                <ul>
+                  {{range .Films}}
+                    <li>{{.}}</li>
+                  {{end}}
+                </ul>
+                {{end}}
+                {{end}}
+            </div>
+            {{end}}
+            {{if eq .Choix 1}}
+            {{range .Data}}
+            <div class="carte_perso">
+              {{if .Name}}
+              <img src="{{.ImageURL}}">
+              <p class="nom_perso">{{.Name}}</p>
+              {{if .Films}}
+                <h3>Films:</h3>
+                <ul>
+                {{range .Films}}
+                <li>{{.}}</li>
+                {{end}}
+                </ul>
+                {{end}}
+                {{if .Allies}}
+                <h3>Alliés:</h3>
+                <ul>
+                {{range .Allies}}
+                <li>{{.}}</li>
+                {{end}}
+                </ul>
+                {{end}}
+                {{if .Enemies}}
+                <h3>Ennemis:</h3>
+                <ul>
+                {{range .Enemies}}
+                <li>{{.}}</li>
+                {{end}}
+                </ul>
+                {{end}}
+                {{if .TvShows}}
+                <h3>Série:</h3>
+                <ul>
+                {{range .TvShows}}
+                <li>{{.}}</li>
+                {{end}}
+                </ul>
+                {{end}}
+              {{end}}
           </div>
-        </footer>
+            {{end}}
+          {{end}}
+        </div>    
+      
+      
 </body>
 <script src="js/caroussel.js"></script>
 </html>
