@@ -9,7 +9,7 @@ body{
     background-image: url('images/fond\ disney.jpg');
     background-size: cover;
 }
-/* Barre de navigation */
+
 nav {
   display: flex;
   align-items: center;
@@ -21,7 +21,6 @@ nav {
   left: 0;
   width: 100%;
   z-index: 9999;
-  margin-bottom: 200px;
 }
 
 .logo {
@@ -73,7 +72,7 @@ nav {
   margin-right: 10px;
 }
 
-/* Styles pour les écrans de moins de 768px */
+
 @media only screen and (max-width: 768px) {
   .menu li {
     margin: 0 20px;
@@ -114,6 +113,7 @@ nav {
 
   .ctn_btn{
     display: flex;
+    justify-content: center;
   }
 
   .bouton{
@@ -141,3 +141,5 @@ nav {
       display: list-item;
     }
   }
+
+

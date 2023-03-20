@@ -324,17 +324,17 @@ func listeNomsHandler(w http.ResponseWriter, r *http.Request) {
 		tri := r.FormValue("tri")
 		switch tri {
 		case "az":
-			// Tri de la liste de noms en ordre décroissant
+
 			sort.Strings(noms)
 		case "za":
-			// Tri de la liste de noms en ordre décroissant
+
 			sort.Sort(sort.Reverse(sort.StringSlice(noms)))
 		case "random":
 			noms = melangerNoms(noms)
-			// Ajouter d'autres cas pour les autres types de tri
+
 		}
 	}
-	// Génération du code HTML
+
 	tmpl := template.Must(template.ParseFiles("pages/doc.html"))
 	data := struct{ Noms []string }{noms}
 	tmpl.Execute(w, data)
@@ -401,6 +401,10 @@ func main() {
 
 	http.HandleFunc("/doc", func(w http.ResponseWriter, r *http.Request) {
 		listeNomsHandler(w, r)
+	})
+	http.HandleFunc("/carte", func(w http.ResponseWriter, r *http.Request) {
+		tmpl4 := template.Must(template.ParseFiles("pages/perso.html"))
+		tmpl4.Execute(w, r)
 	})
 
 	http.ListenAndServe(":8888", nil)

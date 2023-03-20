@@ -9,10 +9,13 @@
     color: white;
     font-size: 60px;
 }
-
+.btn_ctn{
+    display: flex;
+    justify-content: center;
+}
 .bouton_liste{
     margin-top: 75px;
-    width: calc(90%/3);
+    width: calc(70%/3);
     border-radius: 0;
     border: 5px solid white;
     background-color: #333;
@@ -21,8 +24,8 @@
     cursor: pointer;
     margin-bottom: 100px;
     font-size: 70px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 @media (min-width: 768px) and (max-width: 1291px) {
     .bouton_liste {

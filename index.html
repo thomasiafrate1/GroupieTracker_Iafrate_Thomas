@@ -23,15 +23,15 @@
           <li><a href="/doc"><i class="fas fa-video"></i>DOCUMENTATION</a></li>  
       </nav>
       <form action="/" method="post" class="search-bar">
-        <input type="text" id="id" name="Name" placeholder="Rechercher par ex Baloo">
+        <input type="text" id="id" name="Name" placeholder="Rechercher... ex Baloo">
       </form>
 
-        <a href="#" class="lien_carte">
+        
           <div class="ctn">
             {{if eq .Choix 2}}
-            <div class="carte_perso">
+            <div class="carte_après">
                 {{if .Name}}
-                <img src="{{.ImageURL}}">
+                <img src="{{.ImageURL}}" class="img_carte">
                 <p class="nom_perso">{{.Name}}</p>
                 <p>Films :</p>
                   {{if (eq (len .Films) 0)}}
@@ -43,6 +43,67 @@
                       {{end}}
                     </ul>
                     {{end}}
+                    <p>Série :</p>
+                  {{if (eq (len .TvShows) 0)}}
+                  aucun
+                  {{else}}
+                    <ul>
+                      {{range .TvShows}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                    {{end}}
+                    <p>Courts-métrages :</p>
+                  {{if (eq (len .ShortFilms) 0)}}
+                  aucun
+                  {{else}}
+                    <ul>
+                      {{range .ShortFilms}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                    {{end}}
+                    <p>Jeux-Vidéos :</p>
+                  {{if (eq (len .VideoGames) 0)}}
+                  aucun
+                  {{else}}
+                    <ul>
+                      {{range .VideoGames}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                    {{end}}
+                    <p>Parc D'Attractions :</p>
+                  {{if (eq (len .ParkAttractions) 0)}}
+                  aucun
+                  {{else}}
+                    <ul>
+                      {{range .ParkAttractions}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                    {{end}}
+                    <p>Alliés :</p>
+                  {{if (eq (len .Allies) 0)}}
+                  aucun
+                  {{else}}
+                    <ul>
+                      {{range .Allies}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                    {{end}}
+                    <p>Ennemis :</p>
+                  {{if (eq (len .Enemies) 0)}}
+                  aucun
+                  {{else}}
+                    <ul>
+                      {{range .Enemies}}
+                        <li>{{.}}</li>
+                      {{end}}
+                    </ul>
+                    {{end}}
+                    
                     {{end}}
                 </div>
                 {{end}}
@@ -51,7 +112,7 @@
                 
                 <div class="carte_perso">
                   {{if .Name}}
-                  <img src="{{.ImageURL}}">
+                  <img src="{{.ImageURL}}" class="img_carte">
                   <p class="nom_perso">{{.Name}}</p>
                   {{if .Films}}
                     <h3>Films:</h3>
@@ -90,8 +151,8 @@
                 {{end}}
               {{end}}
             </div>    
-        </a>
-      
+     
+        
         <footer>
           <img src="../css/images/logo.png" class="logo_footer">
           <p>© 2023 Disney+. Tous droits réservés.</p>
@@ -103,5 +164,4 @@
         </footer>
       
 </body>
-<script src="js/caroussel.js"></script>
 </html>
