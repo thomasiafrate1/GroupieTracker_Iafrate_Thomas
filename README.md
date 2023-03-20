@@ -1,3 +1,5 @@
+![logo](https://user-images.githubusercontent.com/113009615/226326762-5f056532-bd35-4e8e-8895-a047c08c7d98.png)
+
 # Projet Disney API
 
 Le projet consiste à créer un site web hébergé en Golang qui utilise l'API Disney. Le site doit permettre de rechercher des informations sur les personnages.
@@ -17,3 +19,4 @@ Le site web est développé en Golang en utilisant le langage HTML et CSS.
 # Équipe de développement
 
     Iafrate Thomas
+
