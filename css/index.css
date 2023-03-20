@@ -21,6 +21,7 @@ nav {
   left: 0;
   width: 100%;
   z-index: 9999;
+  margin-bottom: 200px;
 }
 
 .logo {
@@ -126,7 +127,7 @@ nav {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    width: 768px;
+    width: 300px;
     height: 300px;
     margin-top: 200px;
     margin-left: 350px;
@@ -135,4 +136,8 @@ nav {
     font-size: 140%;
     
   }
-  
+  @media (max-width: 1500px) {
+    .ctn_btn{
+      display: list-item;
+    }
+  }

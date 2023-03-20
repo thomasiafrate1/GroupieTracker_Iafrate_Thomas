@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/caroussel.css">
+    <link rel="stylesheet" href="../css/personnages.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <nav>
+        <div>
+          <a href="/accueil" class="logo"><img src="css/images/logo.png" alt="Logo Disney+"></a>
+        </div>
+        <ul class="menu">
+          <li><a href="/accueil"><i class="fas fa-home"></i> ACCUEIL</a></li>
+          <li><a href="/"><i class="fas fa-user"></i> PERSONNAGES</a></li>
+          <li><a href="/doc"><i class="fas fa-video"></i>DOCUMENTATION</a></li>  
+      </nav>
+     
+
+      <div class="carte_perso">
+        {{if .Name}}
+        <img src="{{.ImageURL}}">
+        <p class="nom_perso">{{.Name}}</p>
+        {{if .Films}}
+          <h3>Films:</h3>
+          <ul>
+          {{range .Films}}
+          <li>{{.}}</li>
+          {{end}}
+          </ul>
+          {{end}}
+          {{if .Allies}}
+          <h3>Alliés:</h3>
+          <ul>
+          {{range .Allies}}
+          <li>{{.}}</li>
+          {{end}}
+          </ul>
+          {{end}}
+          {{if .Enemies}}
+          <h3>Ennemis:</h3>
+          <ul>
+          {{range .Enemies}}
+          <li>{{.}}</li>
+          {{end}}
+          </ul>
+          {{end}}
+          {{if .TvShows}}
+          <h3>Série:</h3>
+          <ul>
+          {{range .TvShows}}
+          <li>{{.}}</li>
+          {{end}}
+          </ul>
+          {{end}}
+        {{end}}
+    </div>
+   
+    <footer>
+      <img src="../css/images/logo.png" class="logo_footer">
+      <p>© 2023 Disney+. Tous droits réservés.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </footer>
+      
+      
+</body>
+<script src="js/caroussel.js"></script>
+</html>

@@ -39,11 +39,12 @@ body{
   justify-content: center;
  width: calc(100%/1);
  overflow: hidden;
+ margin-top: 200px;
   
 }
 
 .carte_perso{
-
+  margin-top: 200px;
   display: inline-block;
   flex-direction: column;
   margin: auto;
@@ -61,4 +62,8 @@ body{
   font-size: 22px;
   font-weight: 800;
   text-align: center;
+}
+
+.lien_carte{
+  margin-top: 200px;
 }
